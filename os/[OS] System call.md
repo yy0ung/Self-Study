@@ -8,7 +8,9 @@
 
 <br>
 
-💡 printf()라는 api 를 예시로 보면, 해당 api 가 실행될 때 user 모드에서 kernel 모드로 넘어가면서 그 진입점에 있는 코드가 system call (그때 수행되는 함수).
+💡 printf()라는 api 를 예시로 보면, 해당 api 가 실행될 때 user 모드에서 kernel 모드로 넘어가면서 그 진입점에 있는 코드가 system call (그때 수행되는 함수). 
+<br>
+💡시스템 콜은 실제로 커널 request 하는 것으로 API 와는 다르다. malloc(), calloc(), free() 등의 APIs 는 brk() fksms system call 을 담은 container 라고 할 수 있다. 
 
 <br>
 
@@ -18,6 +20,13 @@
   * 장치 조작
   * 정보 유지 보수
   * 통신과 보호
+
+<br>
+
+* 시스템 콜 쓰는 이유 (명분)
+  * Easy to program : 없다면 모든 코드를 매번 다 짜야함.
+  * Increasing system security
+  * Increase program portability : 표준화의 중요성
 
 <br><br>
 
