@@ -10,7 +10,7 @@
 
 💡 printf()라는 api 를 예시로 보면, 해당 api 가 실행될 때 user 모드에서 kernel 모드로 넘어가면서 그 진입점에 있는 코드가 system call (그때 수행되는 함수). 
 <br>
-💡시스템 콜은 실제로 커널 request 하는 것으로 API 와는 다르다. malloc(), calloc(), free() 등의 APIs 는 brk() fksms system call 을 담은 container 라고 할 수 있다. 
+💡시스템 콜은 실제로 커널 request 하는 것으로 API 와는 다르다. malloc(), calloc(), free() 등의 APIs 는 brk() 라는 system call 을 담은 container 라고 할 수 있다. 
 
 <br>
 
