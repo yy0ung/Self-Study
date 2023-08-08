@@ -2,6 +2,7 @@
 
 <br>
 
+
 - JVM ( Java Virtual Machine )
 - 자바 소스코드를 컴파일해서 나온 자바 바이트 코드를 실행하는 주체.
 - `Class Loader`, `Execution Engine`, `Garbage Collector`, `Runtime Data Area`
