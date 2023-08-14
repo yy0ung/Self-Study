@@ -94,3 +94,35 @@
     - 둘 모두 같은 이름이지만 다시 정의되어 다른 역할을 하기 때문.
 - 상위 클래스의 참조 변수로 하위 클래스의 객체를 참조할 수 있는 것.
     - 예를 들어, `Vehicle` 클래스가 `Car`, `Bike` 클래스의 부모 클래스. 이러한 `Vehicle`들의 배열을 만들고 싶을 때, `Car`, `Bike` 는 그 자체로는 다른 이름을 가지고 있기 때문에 만들 수 없음. 이때 `Vehicle` 를 타입으로 하는 배열을 만들면 자식 클래스들이 모두 추가될 수 있음.
+
+
+<br><br>
+
+### Sealed class
+
+- 자기 자신이 추상클래스이며 자신을 상속받는 여러 자식 클래스를 가질 수 있음.
+    - 자식 클래스는 같은 파일 안에만 선언되어야 함.
+    - `private` 생성자만 가지게 됨.
+- 인스턴스화 불가능
+    - 추상 클래스이기 때문에 직접 인스턴스화 불가능.
+    - 하위 클래스로 상속하고 그 하위클래스를 인스턴스화 할 수 있음.
+
+```kotlin
+sealed class Result
+data class Success(val data: String) : Result()
+data class Error(val message: String) : Result()
+
+// (잘못된 예시) 직접 인스턴스화가 불가능
+// val result = Result()
+
+fun processResult(result: Result) = when (result) {
+    is Success -> println("Success: ${result.data}")
+    is Error -> println("Error: ${result.message}")
+}
+
+val successResult = Success("Data loaded successfully")
+val errorResult = Error("Error while processing data")
+
+processResult(successResult) // 출력: Success: Data loaded successfully
+processResult(errorResult)  // 출력: Error: Error while processing data
+```
